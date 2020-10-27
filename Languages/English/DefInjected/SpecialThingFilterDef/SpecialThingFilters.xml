@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <AllowNonLootedWeapons.label>allow non-looted</AllowNonLootedWeapons.label>
+  <AllowNonLootedWeapons.description>Allow weapons that are not marked with (L).</AllowNonLootedWeapons.description>
+
+  <AllowLootedWeapons.label>allow looted</AllowLootedWeapons.label>
+  <AllowLootedWeapons.description>Allow weapons that are marked with (L).</AllowLootedWeapons.description>
+
+
+</LanguageData>

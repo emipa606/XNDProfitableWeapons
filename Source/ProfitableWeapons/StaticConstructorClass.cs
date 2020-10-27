@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
 using RimWorld;
 using Verse;
-using Verse.AI;
-using HarmonyLib;
 
 namespace ProfitableWeapons
 {
@@ -18,8 +11,8 @@ namespace ProfitableWeapons
 
         static StaticConstructorClass()
         {
-            // Dynamically patch all ThingDefs that are weapons
-            foreach (ThingDef weaponDef in DefDatabase<ThingDef>.AllDefs.Where(d => d.IsWeapon && !d.HasComp(typeof(CompLootedWeapon))))
+            // Dynamically patch all ThingDefs that are weapons but not stuff like woodlog and bottles
+            foreach (ThingDef weaponDef in DefDatabase<ThingDef>.AllDefs.Where(d => d.IsWeapon && !d.IsDrug && !d.IsStuff && !d.HasComp(typeof(CompLootedWeapon))))
             {
                 // Set sell price multiplier based on settings
                 weaponDef.SetStatBaseValue(StatDefOf.SellPriceFactor, ProfitableWeaponsSettings.nonLootedSellPriceMult);

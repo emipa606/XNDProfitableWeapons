@@ -1,24 +1,21 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-    <SpecialThingFilterDef>
-        <defName>AllowNonLootedWeapons</defName>
-        <label>allow non-looted</label>
-        <description>Allow weapons that are not marked with (L).</description>
-        <parentCategory>Weapons</parentCategory>
-        <allowedByDefault>true</allowedByDefault>
-        <saveKey>allowNonScavengedWeapons</saveKey>
-        <workerClass>ProfitableWeapons.SpecialThingFilterWorker_NonLootedWeapon</workerClass>
-    </SpecialThingFilterDef>
-
-    <SpecialThingFilterDef>
-        <defName>AllowLootedWeapons</defName>
-        <label>allow looted</label>
-        <description>Allow weapons that are marked with (L).</description>
-        <parentCategory>Weapons</parentCategory>
-        <allowedByDefault>true</allowedByDefault>
-        <saveKey>allowLootedWeapons</saveKey>
-        <workerClass>ProfitableWeapons.SpecialThingFilterWorker_LootedWeapon</workerClass>
-    </SpecialThingFilterDef>
-
+  <SpecialThingFilterDef>
+    <defName>AllowNonLootedWeapons</defName>
+    <label>allow non-looted</label>
+    <description>Allow weapons that are not marked with (L).</description>
+    <parentCategory>Weapons</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowNonScavengedWeapons</saveKey>
+    <workerClass>ProfitableWeapons.SpecialThingFilterWorker_NonLootedWeapon</workerClass>
+  </SpecialThingFilterDef>
+  <SpecialThingFilterDef>
+    <defName>AllowLootedWeapons</defName>
+    <label>allow looted</label>
+    <description>Allow weapons that are marked with (L).</description>
+    <parentCategory>Weapons</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowLootedWeapons</saveKey>
+    <workerClass>ProfitableWeapons.SpecialThingFilterWorker_LootedWeapon</workerClass>
+  </SpecialThingFilterDef>
 </Defs>

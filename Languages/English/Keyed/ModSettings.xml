@@ -1,25 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-    <ProfitableWeaponsSettingsCategory>Profitable Weapons</ProfitableWeaponsSettingsCategory>
-
-    <SettingFlagInventoryWeapons>Flag inventory weapons</SettingFlagInventoryWeapons>
-    <SettingFlagInventoryWeaponsToolTip>If enabled, weapons dropped from non-player pawn inventories (e.g. combat suppliers) will be marked as 'looted'.</SettingFlagInventoryWeaponsToolTip>
-
-    <SettingFlagWellUsedWeapons>Flag well-used weapons</SettingFlagWellUsedWeapons>
-    <SettingFlagWellUsedWeaponsToolTip>If enabled, weapons will be marked as 'looted' after a total of 20 full bursts and melee attacks.</SettingFlagWellUsedWeaponsToolTip>
-
-    <SettingNonLootedSellMult>Non-looted sell price multiplier</SettingNonLootedSellMult>
-    <SettingNonLootedSellMultNote>Note: Requires restart for changes to take effect</SettingNonLootedSellMultNote>
-
-    <SettingLootedSellMult>Looted sell price multiplier</SettingLootedSellMult>
-    <SettingLootedSellMultNote>Note: This is applied as a multiplier of the non-looted sell price multiplier. Current looted sell price multiplier: {0}</SettingLootedSellMultNote>
-
-    <MendingIsNotActive>MendAndRecycle is currently not active.</MendingIsNotActive>
-    <MendingRemoveLootedFlag>Remove 'looted' tag from mended weapons</MendingRemoveLootedFlag>
-    <MendingRemoveLootedFlagToolTip>When a weapon gets mended at a mending station, its 'looted' tag will be removed in a similar fashion to tainted apparel.</MendingRemoveLootedFlagToolTip>
-
-    <NanoRepairTechIsNotActive>Nano Repair Tech is currently not active.</NanoRepairTechIsNotActive>
-    <NanoRepairTechRemoveLootedFlagToolTip>When a weapon gets mended by nano repairing furniture, its 'looted' tag will be removed in a similar fashion to tainted apparel.</NanoRepairTechRemoveLootedFlagToolTip>
+  <ProfitableWeaponsSettingsCategory>Profitable Weapons</ProfitableWeaponsSettingsCategory>
+  <SettingFlagInventoryWeapons>Flag inventory weapons</SettingFlagInventoryWeapons>
+  <SettingFlagInventoryWeaponsToolTip>If enabled, weapons dropped from non-player pawn inventories (e.g. combat suppliers) will be marked as 'looted'.</SettingFlagInventoryWeaponsToolTip>
+  <SettingFlagWellUsedWeapons>Flag well-used weapons</SettingFlagWellUsedWeapons>
+  <SettingFlagWellUsedWeaponsToolTip>If enabled, weapons will be marked as 'looted' after a total of 20 full bursts and melee attacks.</SettingFlagWellUsedWeaponsToolTip>
+  <SettingNonLootedSellMult>Non-looted sell price multiplier</SettingNonLootedSellMult>
+  <SettingNonLootedSellMultNote>Note: Requires restart for changes to take effect</SettingNonLootedSellMultNote>
+  <SettingLootedSellMult>Looted sell price multiplier</SettingLootedSellMult>
+  <SettingLootedSellMultNote>Note: This is applied as a multiplier of the non-looted sell price multiplier. Current looted sell price multiplier: {0}</SettingLootedSellMultNote>
+  <MendingIsNotActive>MendAndRecycle is currently not active.</MendingIsNotActive>
+  <MendingRemoveLootedFlag>Remove 'looted' tag from mended weapons</MendingRemoveLootedFlag>
+  <MendingRemoveLootedFlagToolTip>When a weapon gets mended at a mending station, its 'looted' tag will be removed in a similar fashion to tainted apparel.</MendingRemoveLootedFlagToolTip>
+  <NanoRepairTechIsNotActive>Nano Repair Tech is currently not active.</NanoRepairTechIsNotActive>
+  <NanoRepairTechRemoveLootedFlagToolTip>When a weapon gets mended by nano repairing furniture, its 'looted' tag will be removed in a similar fashion to tainted apparel.</NanoRepairTechRemoveLootedFlagToolTip>
 
 </LanguageData>
