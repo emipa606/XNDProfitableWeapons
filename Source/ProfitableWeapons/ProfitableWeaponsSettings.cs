@@ -1,11 +1,10 @@
-﻿using Verse;
-using UnityEngine;
+﻿using UnityEngine;
+using Verse;
 
 namespace ProfitableWeapons
 {
     public class ProfitableWeaponsSettings : ModSettings
     {
-
         private const int SliderRectHeight = 18;
 
         public static bool flagInventoryWeapons = true;
@@ -16,9 +15,9 @@ namespace ProfitableWeapons
 
         public static float lootedSellPriceMult = 0.2f;
 
-        public static bool mendingRemoveLootedFlag = true;
+        private static bool mendingRemoveLootedFlag = true;
 
-        public static bool nanoRepairRemoveLootedFlag = true;
+        private static bool nanoRepairRemoveLootedFlag = true;
 
         public void DoWindowContents(Rect wrect)
         {
@@ -32,16 +31,20 @@ namespace ProfitableWeapons
             options.Gap();
 
             // Flag inventory weapons
-            options.CheckboxLabeled("SettingFlagInventoryWeapons".Translate(), ref flagInventoryWeapons, "SettingFlagInventoryWeaponsToolTip".Translate());
+            options.CheckboxLabeled("SettingFlagInventoryWeapons".Translate(), ref flagInventoryWeapons,
+                "SettingFlagInventoryWeaponsToolTip".Translate());
             options.Gap();
 
             // Flag well-used weapons
-            options.CheckboxLabeled("SettingFlagWellUsedWeapons".Translate(), ref flagFromWellUsed, "SettingFlagWellUsedWeaponsToolTip".Translate());
+            options.CheckboxLabeled("SettingFlagWellUsedWeapons".Translate(), ref flagFromWellUsed,
+                "SettingFlagWellUsedWeaponsToolTip".Translate());
             options.Gap(12 + SliderRectHeight);
 
             // Non-looted sell price multiplier
-            nonLootedSellPriceMult = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight), nonLootedSellPriceMult, 0, 1,
-                leftAlignedLabel: "SettingNonLootedSellMult".Translate(), rightAlignedLabel: nonLootedSellPriceMult.ToStringPercent(), roundTo: 0.01f);
+            nonLootedSellPriceMult = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight), nonLootedSellPriceMult,
+                0, 1,
+                leftAlignedLabel: "SettingNonLootedSellMult".Translate(),
+                rightAlignedLabel: nonLootedSellPriceMult.ToStringPercent(), roundTo: 0.01f);
             Text.Font = GameFont.Tiny;
             options.Label("SettingNonLootedSellMultNote".Translate());
             Text.Font = GameFont.Small;
@@ -49,9 +52,12 @@ namespace ProfitableWeapons
 
             // Looted sell price multiplier
             lootedSellPriceMult = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight), lootedSellPriceMult, 0, 1,
-                leftAlignedLabel: "SettingLootedSellMult".Translate(), rightAlignedLabel: lootedSellPriceMult.ToStringPercent(), roundTo: 0.01f);
+                leftAlignedLabel: "SettingLootedSellMult".Translate(),
+                rightAlignedLabel: lootedSellPriceMult.ToStringPercent(), roundTo: 0.01f);
             Text.Font = GameFont.Tiny;
-            options.Label("SettingLootedSellMultNote".Translate((nonLootedSellPriceMult * lootedSellPriceMult).ToStringPercent()));
+            options.Label(
+                "SettingLootedSellMultNote".Translate((nonLootedSellPriceMult * lootedSellPriceMult)
+                    .ToStringPercent()));
             Text.Font = GameFont.Small;
             options.Gap();
 
@@ -62,7 +68,8 @@ namespace ProfitableWeapons
             options.Gap(6);
             if (ModCompatibilityCheck.Mending)
             {
-                options.CheckboxLabeled("MendingRemoveLootedFlag".Translate(), ref mendingRemoveLootedFlag, "MendingRemoveLootedFlagToolTip".Translate());
+                options.CheckboxLabeled("MendingRemoveLootedFlag".Translate(), ref mendingRemoveLootedFlag,
+                    "MendingRemoveLootedFlagToolTip".Translate());
             }
             else
             {
@@ -70,6 +77,7 @@ namespace ProfitableWeapons
                 options.Label("MendingIsNotActive".Translate());
                 GUI.color = defaultColor;
             }
+
             options.Gap();
 
             // Nano Repair Tech integration
@@ -79,7 +87,8 @@ namespace ProfitableWeapons
             options.Gap(6);
             if (ModCompatibilityCheck.Mending)
             {
-                options.CheckboxLabeled("MendingRemoveLootedFlag".Translate(), ref nanoRepairRemoveLootedFlag, "NanoRepairTechRemoveLootedFlagToolTip".Translate());
+                options.CheckboxLabeled("MendingRemoveLootedFlag".Translate(), ref nanoRepairRemoveLootedFlag,
+                    "NanoRepairTechRemoveLootedFlagToolTip".Translate());
             }
             else
             {
@@ -91,7 +100,6 @@ namespace ProfitableWeapons
             options.End();
 
             Mod.GetSettings<ProfitableWeaponsSettings>().Write();
-
         }
 
         public override void ExposeData()
@@ -103,7 +111,5 @@ namespace ProfitableWeapons
             Scribe_Values.Look(ref mendingRemoveLootedFlag, "mendingRemoveLootedFlag", true);
             Scribe_Values.Look(ref nanoRepairRemoveLootedFlag, "nanoRepairRemoveLootedFlag", true);
         }
-
     }
-
 }
