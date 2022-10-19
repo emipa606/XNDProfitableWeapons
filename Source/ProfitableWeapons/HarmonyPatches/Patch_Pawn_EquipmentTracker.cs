@@ -1,21 +1,20 @@
 ﻿using HarmonyLib;
 using Verse;
 
-namespace ProfitableWeapons
+namespace ProfitableWeapons;
+
+[StaticConstructorOnStartup]
+public static class Patch_Pawn_EquipmentTracker
 {
-    [StaticConstructorOnStartup]
-    public static class Patch_Pawn_EquipmentTracker
+    [HarmonyPatch(typeof(Pawn_EquipmentTracker), nameof(Pawn_EquipmentTracker.TryDropEquipment))]
+    public static class TryDropEquipment
     {
-        [HarmonyPatch(typeof(Pawn_EquipmentTracker), nameof(Pawn_EquipmentTracker.TryDropEquipment))]
-        public static class TryDropEquipment
+        public static void Postfix(Pawn ___pawn, ref ThingWithComps eq)
         {
-            public static void Postfix(Pawn ___pawn, ref ThingWithComps eq)
+            // Try to flag equipped weapon as looted
+            if (eq.TryGetComp<CompLootedWeapon>() is { } lootedComp)
             {
-                // Try to flag equipped weapon as looted
-                if (eq.TryGetComp<CompLootedWeapon>() is { } lootedComp)
-                {
-                    lootedComp.CheckLootedWeapon(___pawn);
-                }
+                lootedComp.CheckLootedWeapon(___pawn);
             }
         }
     }

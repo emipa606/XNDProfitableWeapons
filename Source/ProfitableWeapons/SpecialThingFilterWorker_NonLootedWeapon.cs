@@ -1,12 +1,11 @@
 ﻿using Verse;
 
-namespace ProfitableWeapons
+namespace ProfitableWeapons;
+
+public class SpecialThingFilterWorker_NonLootedWeapon : SpecialThingFilterWorker
 {
-    public class SpecialThingFilterWorker_NonLootedWeapon : SpecialThingFilterWorker
+    public override bool Matches(Thing t)
     {
-        public override bool Matches(Thing t)
-        {
-            return t.TryGetComp<CompLootedWeapon>() is {IsUsedWeapon: false};
-        }
+        return t.TryGetComp<CompLootedWeapon>() is { IsUsedWeapon: false };
     }
 }

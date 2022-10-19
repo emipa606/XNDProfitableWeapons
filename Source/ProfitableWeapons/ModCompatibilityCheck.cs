@@ -1,34 +1,33 @@
 ﻿using System.Linq;
 using Verse;
 
-namespace ProfitableWeapons
+namespace ProfitableWeapons;
+
+[StaticConstructorOnStartup]
+public class ModCompatibilityCheck
 {
-    [StaticConstructorOnStartup]
-    public class ModCompatibilityCheck
+    public static readonly bool CombatExtended;
+
+    public static readonly bool Mending;
+
+    public static readonly bool NanoRepairTech;
+
+    static ModCompatibilityCheck()
     {
-        public static readonly bool CombatExtended;
-
-        public static readonly bool Mending;
-
-        public static readonly bool NanoRepairTech;
-
-        static ModCompatibilityCheck()
+        var activeMods = ModsConfig.ActiveModsInLoadOrder.ToList();
+        foreach (var curMod in activeMods)
         {
-            var activeMods = ModsConfig.ActiveModsInLoadOrder.ToList();
-            foreach (var curMod in activeMods)
+            if (curMod.Name == "Combat Extended")
             {
-                if (curMod.Name == "Combat Extended")
-                {
-                    CombatExtended = true;
-                }
-                else if (curMod.Name == "MendAndRecycle")
-                {
-                    Mending = true;
-                }
-                else if (curMod.Name == "Nano Repair Tech")
-                {
-                    NanoRepairTech = true;
-                }
+                CombatExtended = true;
+            }
+            else if (curMod.Name == "MendAndRecycle")
+            {
+                Mending = true;
+            }
+            else if (curMod.Name == "Nano Repair Tech")
+            {
+                NanoRepairTech = true;
             }
         }
     }

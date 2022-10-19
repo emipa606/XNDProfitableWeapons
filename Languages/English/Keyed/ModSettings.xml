@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <ProfitableWeaponsSettingsCategory>Profitable Weapons</ProfitableWeaponsSettingsCategory>
+  <xnd.CurrentModVersion>Installed mod-version: {0}</xnd.CurrentModVersion>
   <SettingFlagInventoryWeapons>Flag inventory weapons</SettingFlagInventoryWeapons>
   <SettingFlagInventoryWeaponsToolTip>If enabled, weapons dropped from non-player pawn inventories (e.g. combat suppliers) will be marked as 'looted'.</SettingFlagInventoryWeaponsToolTip>
   <SettingFlagWellUsedWeapons>Flag well-used weapons</SettingFlagWellUsedWeapons>
