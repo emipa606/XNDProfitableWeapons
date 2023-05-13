@@ -28,12 +28,9 @@ public class CompLootedWeapon : ThingComp
 
     public override string TransformLabel(string label)
     {
-        if (IsUsedWeapon)
-        {
-            label += " (" + "LootedWeaponChar".Translate() + ")";
-        }
-
-        return label;
+        return !IsUsedWeapon
+            ? label
+            : $"{label} ({"LootedWeaponChar".Translate().RawText})";
     }
 
     public void CheckLootedWeapon(Pawn pawn)
@@ -46,8 +43,10 @@ public class CompLootedWeapon : ThingComp
         if (!pawn.IsPrisonerOfColony)
         {
             isLootedWeaponInt = true;
+            return;
         }
-        else if (pawn.guest == null)
+
+        if (pawn.guest == null)
         {
             isLootedWeaponInt = true;
         }

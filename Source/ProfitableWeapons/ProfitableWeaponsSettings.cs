@@ -41,7 +41,8 @@ public class ProfitableWeaponsSettings : ModSettings
         options.Gap(12 + SliderRectHeight);
 
         // Non-looted sell price multiplier
-        nonLootedSellPriceMult = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight), nonLootedSellPriceMult,
+        nonLootedSellPriceMult = Widgets.HorizontalSlider_NewTemp(options.GetRect(SliderRectHeight),
+            nonLootedSellPriceMult,
             0, 1,
             leftAlignedLabel: "SettingNonLootedSellMult".Translate(),
             rightAlignedLabel: nonLootedSellPriceMult.ToStringPercent(), roundTo: 0.01f);
@@ -51,7 +52,8 @@ public class ProfitableWeaponsSettings : ModSettings
         options.Gap(12 + SliderRectHeight);
 
         // Looted sell price multiplier
-        lootedSellPriceMult = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight), lootedSellPriceMult, 0, 1,
+        lootedSellPriceMult = Widgets.HorizontalSlider_NewTemp(options.GetRect(SliderRectHeight), lootedSellPriceMult,
+            0, 1,
             leftAlignedLabel: "SettingLootedSellMult".Translate(),
             rightAlignedLabel: lootedSellPriceMult.ToStringPercent(), roundTo: 0.01f);
         Text.Font = GameFont.Tiny;

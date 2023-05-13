@@ -62,3 +62,4 @@ Can be added to existing savegames, but only newly-generated weapons will be fla
 
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2269697598]Last updated 2023-05-13

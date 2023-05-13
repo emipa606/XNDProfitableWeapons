@@ -19,9 +19,7 @@ public class ProfitableWeapons : Mod
 
         settings = GetSettings<ProfitableWeaponsSettings>();
         harmonyInstance = new Harmony("XeoNovaDan.ProfitableWeapons");
-        currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(
-                ModLister.GetActiveModWithIdentifier("Mlie.XNDProfitableWeapons"));
+        currentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     public override string SettingsCategory()

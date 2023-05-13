@@ -17,17 +17,17 @@ public class ModCompatibilityCheck
         var activeMods = ModsConfig.ActiveModsInLoadOrder.ToList();
         foreach (var curMod in activeMods)
         {
-            if (curMod.Name == "Combat Extended")
+            switch (curMod.Name)
             {
-                CombatExtended = true;
-            }
-            else if (curMod.Name == "MendAndRecycle")
-            {
-                Mending = true;
-            }
-            else if (curMod.Name == "Nano Repair Tech")
-            {
-                NanoRepairTech = true;
+                case "Combat Extended":
+                    CombatExtended = true;
+                    break;
+                case "MendAndRecycle":
+                    Mending = true;
+                    break;
+                case "Nano Repair Tech":
+                    NanoRepairTech = true;
+                    break;
             }
         }
     }
