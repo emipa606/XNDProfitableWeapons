@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -18,7 +17,7 @@ internal static class StaticConstructorClass
             weaponDef.SetStatBaseValue(StatDefOf.SellPriceFactor, ProfitableWeaponsSettings.nonLootedSellPriceMult);
 
             // CompLootedWeapon
-            weaponDef.comps ??= new List<CompProperties>();
+            weaponDef.comps ??= [];
             weaponDef.comps.Add(new CompProperties
             {
                 compClass = typeof(CompLootedWeapon)

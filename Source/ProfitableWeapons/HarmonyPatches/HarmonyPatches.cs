@@ -172,7 +172,7 @@ public static class HarmonyPatches
         var instructionList = instructions.ToList();
         var done = false;
 
-        var unused = AccessTools.Property(typeof(Thing), nameof(Thing.HitPoints)).GetGetMethod();
+        _ = AccessTools.Property(typeof(Thing), nameof(Thing.HitPoints)).GetGetMethod();
 
         for (var i = 0; i < instructionList.Count; i++)
         {

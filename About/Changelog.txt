@@ -1,5 +1,8 @@
 # Changelog for XNDProfitableWeapons
 
+1.5.0 - Mod updated for 1.5 and passed autotests
+
+
 1.4.2 - Fixed the compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2005333573]Weapon and Apparel Quality Indicators[/url] (finally)
 
 
