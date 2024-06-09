@@ -86,15 +86,15 @@ public static class HarmonyPatches
         }
 
         // Nano repairing
-        var nanoRepair = GenTypes.GetTypeInAnyAssembly("Ogre.NanoRepairTech.NanoRepair");
+        var nanoRepair = GenTypes.GetTypeInAnyAssembly("Ogre.NanoRepairTech.NanoTracker");
         if (nanoRepair != null)
         {
-            ProfitableWeapons.harmonyInstance.Patch(AccessTools.Method(nanoRepair, "ProcessTick"),
+            ProfitableWeapons.harmonyInstance.Patch(AccessTools.Method(nanoRepair, "tick"),
                 transpiler: new HarmonyMethod(patchType, nameof(Transpile_NanoRepairTech_NanoRepair_ProcessTick)));
         }
         else
         {
-            Log.Error("Profitable Weapons - Couldn't find Ogre.NanoRepairTech.NanoRepair type to patch");
+            Log.Error("Profitable Weapons - Couldn't find Ogre.NanoRepairTech.NanoTracker type to patch");
         }
     }
 

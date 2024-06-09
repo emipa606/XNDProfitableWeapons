@@ -1,17 +1,14 @@
-# XNDProfitableWeapons
+# [[XND] Profitable Weapons (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2269697598)
 
 ![Image](https://i.imgur.com/buuPQel.png)
-
 Update of XeoNovaDans mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1386385125
 
 - Added the fix for bottles and logs wrongly being tagged
 
 ![Image](https://i.imgur.com/pufA0kM.png)
-
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
-
 # **Overview**
 
 In vanilla RimWorld, it's impossible to profit from producing weapons due to their pitiful 20% sell price multiplier; you're always better off selling their raw materials. The reason why such a multiplier exists in the first place is so that it wasn't ridiculously easy to profit from raids, but as mentioned previously, this approach had its side-effects.
@@ -40,7 +37,7 @@ Can be added to existing savegames, but only newly-generated weapons will be fla
 
 # **Credits**
 
-**Mehni** - for tolerating my endless questions, offering tons of advice and guidance, and generally being awesome. I probably couldn't have done this without him; huge thanks! https://steamcommunity.com/workshop/filedetails/?id=1268277839]He also makes some great mods; I'd highly recommend checking them out.
+**Mehni** - for tolerating my endless questions, offering tons of advice and guidance, and generally being awesome. I probably couldn't have done this without him; huge thanks! [https://steamcommunity.com/workshop/filedetails/?id=1268277839](He also makes some great mods); I'd highly recommend checking them out.
 **NoImageAvailable** - For helping me with getting this mod to work properly with MendAndRecycle while keeping things simple. Another huge thanks!
 **ChJees and Erdelf** - offering more advice and guidance. Big thanks!
 **Pardeike (AKA Brainz)** - for making Harmony. This was so much easier to do thanks his work!
@@ -51,16 +48,14 @@ Can be added to existing savegames, but only newly-generated weapons will be fla
 ![Image](https://i.imgur.com/PwoNOj4.png)
 
 
-
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Post your error-log using [https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404](Uploader) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [https://github.com/RimSort/RimSort/releases/latest](RimSort) to sort your mods
 
 
 
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2269697598]![Image](https://img.shields.io/github/v/release/emipa606/XNDProfitableWeapons?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[https://steamcommunity.com/sharedfiles/filedetails/changelog/2269697598]![Image]((https://img.shields.io/github/v/release/emipa606/XNDProfitableWeapons?label=latest%20version&style=plastic&color=9f1111&labelColor=black))
