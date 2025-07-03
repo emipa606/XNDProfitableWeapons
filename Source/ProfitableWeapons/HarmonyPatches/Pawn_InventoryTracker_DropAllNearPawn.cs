@@ -9,7 +9,7 @@ public static class Pawn_InventoryTracker_DropAllNearPawn
     public static void Prefix(Pawn ___pawn, ref ThingOwner ___innerContainer)
     {
         // If set to flag inventory weapons as looted, go through each item that was in inventory and attempt to flag as looted
-        if (!ProfitableWeaponsSettings.flagInventoryWeapons)
+        if (!ProfitableWeaponsSettings.FlagInventoryWeapons)
         {
             return;
         }

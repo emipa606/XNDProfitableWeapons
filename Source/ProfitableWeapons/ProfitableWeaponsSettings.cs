@@ -7,23 +7,23 @@ public class ProfitableWeaponsSettings : ModSettings
 {
     private const int SliderRectHeight = 18;
 
-    public static bool flagInventoryWeapons = true;
+    public static bool FlagInventoryWeapons = true;
 
-    public static bool flagFromWellUsed = true;
+    public static bool FlagFromWellUsed = true;
 
-    public static float nonLootedSellPriceMult = 1;
+    public static float NonLootedSellPriceMultiplier = 1;
 
-    public static float lootedSellPriceMult = 0.2f;
+    public static float LootedSellPriceMultiplier = 0.2f;
 
     private static bool mendingRemoveLootedFlag = true;
 
     private static bool nanoRepairRemoveLootedFlag = true;
 
-    public void DoWindowContents(Rect wrect)
+    public void DoWindowContents(Rect rect)
     {
         var options = new Listing_Standard();
         var defaultColor = GUI.color;
-        options.Begin(wrect);
+        options.Begin(rect);
 
         GUI.color = defaultColor;
         Text.Font = GameFont.Small;
@@ -31,34 +31,35 @@ public class ProfitableWeaponsSettings : ModSettings
         options.Gap();
 
         // Flag inventory weapons
-        options.CheckboxLabeled("SettingFlagInventoryWeapons".Translate(), ref flagInventoryWeapons,
+        options.CheckboxLabeled("SettingFlagInventoryWeapons".Translate(), ref FlagInventoryWeapons,
             "SettingFlagInventoryWeaponsToolTip".Translate());
         options.Gap();
 
         // Flag well-used weapons
-        options.CheckboxLabeled("SettingFlagWellUsedWeapons".Translate(), ref flagFromWellUsed,
+        options.CheckboxLabeled("SettingFlagWellUsedWeapons".Translate(), ref FlagFromWellUsed,
             "SettingFlagWellUsedWeaponsToolTip".Translate());
         options.Gap(12 + SliderRectHeight);
 
         // Non-looted sell price multiplier
-        nonLootedSellPriceMult = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight),
-            nonLootedSellPriceMult,
+        NonLootedSellPriceMultiplier = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight),
+            NonLootedSellPriceMultiplier,
             0, 1,
             leftAlignedLabel: "SettingNonLootedSellMult".Translate(),
-            rightAlignedLabel: nonLootedSellPriceMult.ToStringPercent(), roundTo: 0.01f);
+            rightAlignedLabel: NonLootedSellPriceMultiplier.ToStringPercent(), roundTo: 0.01f);
         Text.Font = GameFont.Tiny;
         options.Label("SettingNonLootedSellMultNote".Translate());
         Text.Font = GameFont.Small;
         options.Gap(12 + SliderRectHeight);
 
         // Looted sell price multiplier
-        lootedSellPriceMult = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight), lootedSellPriceMult,
+        LootedSellPriceMultiplier = Widgets.HorizontalSlider(options.GetRect(SliderRectHeight),
+            LootedSellPriceMultiplier,
             0, 1,
             leftAlignedLabel: "SettingLootedSellMult".Translate(),
-            rightAlignedLabel: lootedSellPriceMult.ToStringPercent(), roundTo: 0.01f);
+            rightAlignedLabel: LootedSellPriceMultiplier.ToStringPercent(), roundTo: 0.01f);
         Text.Font = GameFont.Tiny;
         options.Label(
-            "SettingLootedSellMultNote".Translate((nonLootedSellPriceMult * lootedSellPriceMult)
+            "SettingLootedSellMultNote".Translate((NonLootedSellPriceMultiplier * LootedSellPriceMultiplier)
                 .ToStringPercent()));
         Text.Font = GameFont.Small;
         options.Gap();
@@ -99,11 +100,11 @@ public class ProfitableWeaponsSettings : ModSettings
             GUI.color = defaultColor;
         }
 
-        if (ProfitableWeapons.currentVersion != null)
+        if (ProfitableWeapons.CurrentVersion != null)
         {
             options.Gap();
             GUI.contentColor = Color.gray;
-            options.Label("xnd.CurrentModVersion".Translate(ProfitableWeapons.currentVersion));
+            options.Label("xnd.CurrentModVersion".Translate(ProfitableWeapons.CurrentVersion));
             GUI.contentColor = Color.white;
         }
 
@@ -114,10 +115,10 @@ public class ProfitableWeaponsSettings : ModSettings
 
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref flagInventoryWeapons, "flagInventoryWeapons", true);
-        Scribe_Values.Look(ref nonLootedSellPriceMult, "nonLootedSellPriceMult", 1);
-        Scribe_Values.Look(ref lootedSellPriceMult, "lootedSellPriceMult", 0.2f);
-        Scribe_Values.Look(ref flagFromWellUsed, "flagFromWellUsed", true);
+        Scribe_Values.Look(ref FlagInventoryWeapons, "flagInventoryWeapons", true);
+        Scribe_Values.Look(ref NonLootedSellPriceMultiplier, "nonLootedSellPriceMult", 1);
+        Scribe_Values.Look(ref LootedSellPriceMultiplier, "lootedSellPriceMult", 0.2f);
+        Scribe_Values.Look(ref FlagFromWellUsed, "flagFromWellUsed", true);
         Scribe_Values.Look(ref mendingRemoveLootedFlag, "mendingRemoveLootedFlag", true);
         Scribe_Values.Look(ref nanoRepairRemoveLootedFlag, "nanoRepairRemoveLootedFlag", true);
     }

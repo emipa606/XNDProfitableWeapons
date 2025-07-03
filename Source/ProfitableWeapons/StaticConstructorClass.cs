@@ -14,7 +14,8 @@ internal static class StaticConstructorClass
                      d.IsWeapon && !d.IsDrug && !d.IsStuff && !d.HasComp(typeof(CompLootedWeapon))))
         {
             // Set sell price multiplier based on settings
-            weaponDef.SetStatBaseValue(StatDefOf.SellPriceFactor, ProfitableWeaponsSettings.nonLootedSellPriceMult);
+            weaponDef.SetStatBaseValue(StatDefOf.SellPriceFactor,
+                ProfitableWeaponsSettings.NonLootedSellPriceMultiplier);
 
             // CompLootedWeapon
             weaponDef.comps ??= [];

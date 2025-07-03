@@ -8,8 +8,8 @@ namespace ProfitableWeapons;
 public class ProfitableWeapons : Mod
 {
     private static ProfitableWeaponsSettings settings;
-    public static Harmony harmonyInstance;
-    public static string currentVersion;
+    public static Harmony HarmonyInstance;
+    public static string CurrentVersion;
 
     public ProfitableWeapons(ModContentPack content) : base(content)
     {
@@ -18,8 +18,8 @@ public class ProfitableWeapons : Mod
 #endif
 
         settings = GetSettings<ProfitableWeaponsSettings>();
-        harmonyInstance = new Harmony("XeoNovaDan.ProfitableWeapons");
-        currentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
+        HarmonyInstance = new Harmony("XeoNovaDan.ProfitableWeapons");
+        CurrentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     public override string SettingsCategory()

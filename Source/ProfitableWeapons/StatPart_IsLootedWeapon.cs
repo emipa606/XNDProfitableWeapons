@@ -9,7 +9,7 @@ public class StatPart_IsLootedWeapon : StatPart
     {
         if (req.HasThing && req.Thing.TryGetComp<CompLootedWeapon>() is { IsUsedWeapon: true })
         {
-            val *= ProfitableWeaponsSettings.lootedSellPriceMult;
+            val *= ProfitableWeaponsSettings.LootedSellPriceMultiplier;
         }
     }
 
@@ -18,7 +18,7 @@ public class StatPart_IsLootedWeapon : StatPart
         if (req.HasThing && req.Thing.TryGetComp<CompLootedWeapon>() is { IsUsedWeapon: true })
         {
             return "StatsReport_IsLootedWeapon".Translate() + ": x" +
-                   ProfitableWeaponsSettings.lootedSellPriceMult.ToStringPercent();
+                   ProfitableWeaponsSettings.LootedSellPriceMultiplier.ToStringPercent();
         }
 
         return null;

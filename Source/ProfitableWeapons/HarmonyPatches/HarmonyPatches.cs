@@ -21,13 +21,13 @@ public static class HarmonyPatches
 #endif
 
         // Do automatic patches
-        ProfitableWeapons.harmonyInstance.PatchAll();
+        ProfitableWeapons.HarmonyInstance.PatchAll();
 
         // Manual patches
         var tryCastShotPostfix = new HarmonyMethod(patchType, nameof(Postfix_TryCastShot));
-        ProfitableWeapons.harmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "TryCastShot"),
+        ProfitableWeapons.HarmonyInstance.Patch(AccessTools.Method(typeof(Verb_LaunchProjectile), "TryCastShot"),
             postfix: tryCastShotPostfix);
-        ProfitableWeapons.harmonyInstance.Patch(AccessTools.Method(typeof(Verb_MeleeAttack), "TryCastShot"),
+        ProfitableWeapons.HarmonyInstance.Patch(AccessTools.Method(typeof(Verb_MeleeAttack), "TryCastShot"),
             postfix: tryCastShotPostfix);
 
         // Try and patch Combat Extended
@@ -37,7 +37,7 @@ public static class HarmonyPatches
             var meleeVerbCE = GenTypes.GetTypeInAnyAssembly("CombatExtended.Verb_MeleeAttackCE");
             if (meleeVerbCE != null)
             {
-                ProfitableWeapons.harmonyInstance.Patch(AccessTools.Method(meleeVerbCE, "TryCastShot"),
+                ProfitableWeapons.HarmonyInstance.Patch(AccessTools.Method(meleeVerbCE, "TryCastShot"),
                     postfix: tryCastShotPostfix);
             }
             else
@@ -49,7 +49,7 @@ public static class HarmonyPatches
             var launchProjectileVerbCE = GenTypes.GetTypeInAnyAssembly("CombatExtended.Verb_LaunchProjectileCE");
             if (launchProjectileVerbCE != null)
             {
-                ProfitableWeapons.harmonyInstance.Patch(AccessTools.Method(launchProjectileVerbCE, "TryCastShot"),
+                ProfitableWeapons.HarmonyInstance.Patch(AccessTools.Method(launchProjectileVerbCE, "TryCastShot"),
                     postfix: tryCastShotPostfix);
             }
             else
@@ -66,7 +66,7 @@ public static class HarmonyPatches
             var mendingJobDriver = GenTypes.GetTypeInAnyAssembly("MendAndRecycle.JobDriver_Mend");
             if (mendingJobDriver != null)
             {
-                ProfitableWeapons.harmonyInstance.Patch(
+                ProfitableWeapons.HarmonyInstance.Patch(
                     mendingJobDriver.GetNestedTypes(BindingFlags.NonPublic | BindingFlags.Instance).First()
                         .GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
                         .MaxBy(mi => mi.GetMethodBody()?.GetILAsByteArray().Length ?? -1),
@@ -89,7 +89,7 @@ public static class HarmonyPatches
         var nanoRepair = GenTypes.GetTypeInAnyAssembly("Ogre.NanoRepairTech.NanoTracker");
         if (nanoRepair != null)
         {
-            ProfitableWeapons.harmonyInstance.Patch(AccessTools.Method(nanoRepair, "tick"),
+            ProfitableWeapons.HarmonyInstance.Patch(AccessTools.Method(nanoRepair, "tick"),
                 transpiler: new HarmonyMethod(patchType, nameof(Transpile_NanoRepairTech_NanoRepair_ProcessTick)));
         }
         else

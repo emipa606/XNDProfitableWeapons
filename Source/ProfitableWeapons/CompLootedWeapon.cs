@@ -11,13 +11,13 @@ public class CompLootedWeapon : ThingComp
 
     private bool WellUsedWeapon => attackCounter >= BaseAttacksUntilWellUsedThreshold *
                                    (parent.def.IsRangedWeapon ? parent.def.Verbs[0].burstShotCount : 1)
-                                   && ProfitableWeaponsSettings.flagFromWellUsed;
+                                   && ProfitableWeaponsSettings.FlagFromWellUsed;
 
     public bool IsUsedWeapon => isLootedWeaponInt || WellUsedWeapon;
 
     public void ModifyAttackCounter(Verb verb)
     {
-        if (ProfitableWeaponsSettings.flagFromWellUsed && !WellUsedWeapon)
+        if (ProfitableWeaponsSettings.FlagFromWellUsed && !WellUsedWeapon)
             // Prevent odd situations where burst ranged weapons can melee lots without getting flagged
         {
             attackCounter += verb.EquipmentSource.def.IsRangedWeapon && verb.IsMeleeAttack
