@@ -67,9 +67,9 @@ public static class HarmonyPatches
             if (mendingJobDriver != null)
             {
                 ProfitableWeapons.HarmonyInstance.Patch(
-                    mendingJobDriver.GetNestedTypes(BindingFlags.NonPublic | BindingFlags.Instance).First()
+                    mendingJobDriver.GetNestedTypes(BindingFlags.NonPublic | BindingFlags.Instance)[0]
                         .GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
-                        .MaxBy(mi => mi.GetMethodBody()?.GetILAsByteArray().Length ?? -1),
+                        .MaxBy(mi => mi.GetMethodBody()?.GetILAsByteArray()?.Length ?? -1),
                     transpiler: new HarmonyMethod(patchType,
                         nameof(Transpile_MendAndReycle_JobDriver_Mend_MendToil_TickAction)));
             }

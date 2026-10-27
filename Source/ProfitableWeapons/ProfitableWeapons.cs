@@ -13,10 +13,6 @@ public class ProfitableWeapons : Mod
 
     public ProfitableWeapons(ModContentPack content) : base(content)
     {
-#if DEBUG
-                Log.Error("XeoNovaDan left debugging enabled in Profitable Weapons - please let him know!");
-#endif
-
         settings = GetSettings<ProfitableWeaponsSettings>();
         HarmonyInstance = new Harmony("XeoNovaDan.ProfitableWeapons");
         CurrentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);

@@ -3,4 +3,21 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="ProfitableWeapons/ProfitableWeapons.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/Dialog_StatsReports.xml" />
+    <File Path="../Languages/English/Keyed/Misc_Gameplay.xml" />
+    <File Path="../Languages/English/Keyed/ModSettings.xml" />
+  </Folder>
+  <Folder Name="/XML/Patches/Core/Stats/">
+    <File Path="../Patches/Core/Stats/Stats_Basics_General.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/Defs/Misc/SpecialThingFilterDefs/">
+    <File Path="../Defs/Misc/SpecialThingFilterDefs/SpecialThingFilters.xml" />
+  </Folder>
 </Solution>

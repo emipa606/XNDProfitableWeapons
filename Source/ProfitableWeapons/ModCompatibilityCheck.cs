@@ -4,7 +4,7 @@ using Verse;
 namespace ProfitableWeapons;
 
 [StaticConstructorOnStartup]
-public class ModCompatibilityCheck
+public static class ModCompatibilityCheck
 {
     public static readonly bool CombatExtended;
 
